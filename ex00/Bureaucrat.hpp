@@ -12,6 +12,7 @@ class Bureaucrat{
     public:
     /*----------------------- Orthodox Canonical Form -----------------------*/
 		Bureaucrat		();
+		Bureaucrat		(std::string name__, int grade__);
 		Bureaucrat		(Bureaucrat const & src);
 		Bureaucrat&		operator =(const Bureaucrat& b);
 		~Bureaucrat();
