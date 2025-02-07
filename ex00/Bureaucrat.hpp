@@ -7,22 +7,31 @@
 
 class Bureaucrat{
     private:
-        std::string const name;
-        int grade;
+        std::string const   name;
+        int                 grade;
     public:
     /*----------------------- Orthodox Canonical Form -----------------------*/
 		Bureaucrat		();
 		Bureaucrat		(Bureaucrat const & src);
 		Bureaucrat&		operator =(const Bureaucrat& b);
-		virtual 	~Bureaucrat();
+		~Bureaucrat();
 	/*-----------------------------------------------------------------------*/
 
     /*----------------------- public member functions -----------------------*/
-        std::string getName();
-        std::string getGrade();
-        void increment(Bureaucrat &bureaucrat);
-        void decrement(Bureaucrat &bureaucrat);
+        std::string     getName() const;
+        int             getGrade() const;
+        void            increment(int grades);
+        void            decrement(int grades);
+	/*-----------------------------------------------------------------------*/
+
+    /*----------------------- exceptions for the ex00 -----------------------*/
+        class GradeTooHighException : public std::exception{
+            const char* what() const throw();
+        };
+        class GradeTooLowException : public std::exception{
+                const char* what() const throw();
+        };
 	/*-----------------------------------------------------------------------*/
 };
 
-std::ostream&	operator<<(std::ostream& os, const Bureaucrat& obj);
+std::ostream&	        operator<<(std::ostream& os, const Bureaucrat& obj);
