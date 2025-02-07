@@ -4,7 +4,6 @@
 #include <string>
 #include <exception>
 
-
 class Bureaucrat{
     private:
         std::string const   name;
