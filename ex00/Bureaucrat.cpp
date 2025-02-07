@@ -4,6 +4,10 @@ Bureaucrat::Bureaucrat (): name("default name") {
 
 }
 
+Bureaucrat::Bureaucrat (std::string name__, int grade__): name(name__), grade(grade__) {
+
+}
+
 Bureaucrat::Bureaucrat (Bureaucrat const & src): name(src.name), grade(src.grade) {
 
 }
