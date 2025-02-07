@@ -19,6 +19,7 @@ Bureaucrat::~Bureaucrat() {
 Bureaucrat&		Bureaucrat::operator=(const Bureaucrat& b) {
 
     this->grade = b.grade;
+    return (*this);
 }
 
 std::string     Bureaucrat::getName() const{
@@ -52,6 +53,7 @@ void            Bureaucrat::decrement(int grades){
 std::ostream&	        operator<<(std::ostream& os, const Bureaucrat& obj){
 
     os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
+    return os;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw(){
