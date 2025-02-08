@@ -8,28 +8,19 @@ Bureaucrat::Bureaucrat (std::string name__, int grade__): name(name__), grade(gr
     if (grade < 1)
     {
         std::cout << "`" << this->getName() << "` is Death !!" << std::endl;
+        *this = Bureaucrat("default name", 10);
 		throw GradeTooHighException();
     }
 	if (grade > 150)
     {
         std::cout << "`" << this->getName() << "` is Death !!" << std::endl;
+        *this = Bureaucrat("default name", 10);
 		throw GradeTooLowException();
     }
 }
 
 Bureaucrat::Bureaucrat (Bureaucrat const & src): name(src.name), grade(src.grade) {
-    if (src.getGrade() < 1)
-    {
-        std::cout << "`" << this->getName() << "` is Death !!" << std::endl;
-        *this = Bureaucrat("default name", 10);
-		throw GradeTooHighException();
-    }
-	if (src.getGrade() > 150)
-    {
-        std::cout << "`" << this->getName() << "` is Death !!" << std::endl;
-        *this = Bureaucrat("default name", 10);
-		throw GradeTooLowException();
-    }
+
 }
 
 Bureaucrat::~Bureaucrat() {
@@ -37,16 +28,7 @@ Bureaucrat::~Bureaucrat() {
 }
 
 Bureaucrat&		Bureaucrat::operator=(const Bureaucrat& b) {
-    if (b.getGrade() < 1)
-    {
-        std::cout << "`" << this->getName() << "` is Death !!" << std::endl;
-		throw GradeTooHighException();
-    }
-	if (b.getGrade() > 150)
-    {
-        std::cout << "`" << this->getName() << "` is Death !!" << std::endl;
-		throw GradeTooLowException();
-    }
+
     this->grade = b.grade;
     return (*this);
 }
