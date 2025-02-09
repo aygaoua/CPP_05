@@ -21,6 +21,8 @@ Form::Form(Form const & src): name(src.name) ,
 
 Form&		Form::operator=(const Form& b) {
 
+    if (this == &b)
+        return (*this);
     this->is_signed = b.is_signed;
     return (*this);
 }

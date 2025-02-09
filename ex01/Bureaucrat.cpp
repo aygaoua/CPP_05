@@ -29,6 +29,8 @@ Bureaucrat::~Bureaucrat() {
 
 Bureaucrat&		Bureaucrat::operator=(const Bureaucrat& b) {
 
+    if (this == &b)
+        return (*this);
     this->grade = b.grade;
     return (*this);
 }
