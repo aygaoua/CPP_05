@@ -30,7 +30,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 
     AForm::execute(executor);
-    std::ofstream chajara(target + "_shrubbery");
+    std::string target_plus = this->target;
+    target_plus.append("_shrubbery");
+    std::ofstream chajara(target_plus);
 
     if (!chajara.is_open())
         throw std::runtime_error("Error: could not open file");
