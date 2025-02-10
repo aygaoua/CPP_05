@@ -5,77 +5,62 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
-// int main()
-// {
-//     try
-//     {
-//         Intern someRandomIntern;
-//         AForm* rrf;
-//         rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
-
-//         delete rrf;
-//     }
-//     catch (const std::exception& e)
-//     {
-//         std::cout << e.what() << std::endl;
-//     }
-//     return 0;
-// }
-
-void ff (void) {
-    std::cout << "Exiting program" << std::endl;
-}
-
 int main()
 {
     Intern someRandomIntern;
-    Bureaucrat boss("Boss", 1);
-    Bureaucrat clerk("Clerk", 70);
-    atexit(ff);
+    Bureaucrat corrector("Corrector", 1);
+    Bureaucrat me("Me", 70);
+
     try {
-        std::cout << "\n=== Testing invalid form ===\n" << std::endl;
+        std::cout << "\n******* Testing invalid form *******\n" << std::endl;
         AForm* invalid = someRandomIntern.makeForm("invalid form", "test");
         if (invalid == NULL)
             std::cout << "Form creation failed as expected" << std::endl;
         delete invalid;
     }
     catch (std::exception& e) {
-        std::cout << "Exception caught: " << e.what() << std::endl;
+        std::cout << "Exception1 caught: " << e.what() << std::endl;
     }
+
     try{
-        AForm* scf = someRandomIntern.makeForm("shrubbery creation", "garden");
-        std::cout << *scf << std::endl;
-        clerk.signForm(*scf);
-        clerk.executeForm(*scf);
-        std::cout << *scf << std::endl;
-        delete scf;
+        std::cout << "\n********* shrubbery creation *******\n" << std::endl;
+        AForm* SCF = someRandomIntern.makeForm("shrubbery creation", "test1");
+        std::cout << *SCF << std::endl;
+        me.signForm(*SCF);
+        me.executeForm(*SCF);
+        std::cout << *SCF << std::endl;
+        delete SCF;
     }
     catch (std::exception& e) {
-        std::cout << "Exception caught: " << e.what() << std::endl;
+        std::cout << "Exception2 caught: " << e.what() << std::endl;
     }
+
     try{
-        AForm* ppf = someRandomIntern.makeForm("presidential pardon", "Alice");
-        std::cout << "\n" << *ppf << std::endl;
-        boss.signForm(*ppf);
-        boss.executeForm(*ppf);
-        std::cout << *ppf << std::endl;
-        delete ppf;
+        std::cout << "\n******** presidential pardon *******\n" << std::endl;
+        AForm* PPF = someRandomIntern.makeForm("presidential pardon", "test2");
+        std::cout << *PPF << std::endl;
+        corrector.signForm(*PPF);
+        corrector.executeForm(*PPF);
+        std::cout << *PPF << std::endl;
+        delete PPF;
     }
     catch (std::exception& e) {
-        std::cout << "Exception caught: " << e.what() << std::endl;
+        std::cout << "Exception3 caught: " << e.what() << std::endl;
     }
+
     try {
-        // Test Intern creating different forms
-        AForm* rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-        std::cout << "\n" << *rrf << std::endl;
-        boss.signForm(*rrf);
-        boss.executeForm(*rrf);
-        boss.executeForm(*rrf); // Execute twice to see different results
-        std::cout << *rrf << std::endl;
-        delete rrf;
+        std::cout << "\n********* robotomy request *********\n" << std::endl;
+        AForm* RRF = someRandomIntern.makeForm("robotomy request", "test3");
+        std::cout << *RRF << std::endl;
+        corrector.signForm(*RRF);
+        corrector.executeForm(*RRF);
+        corrector.executeForm(*RRF);
+        std::cout << *RRF << std::endl;
+        delete RRF;
     }
     catch (std::exception& e) {
-        std::cout << "Exception caught: " << e.what() << std::endl;
+        std::cout << "Exception4 caught: " << e.what() << std::endl;
     }
+    std::cout << "\n********** Exiting program **********" << std::endl;
     return 0;
 }
