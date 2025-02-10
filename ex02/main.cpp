@@ -17,8 +17,8 @@ int main()
         b1.executeForm(f2);
         std::cout << "***************" << std::endl;
         b1.signForm(f2);
-        // std::cout << "***************" << std::endl;
-        // b1.executeForm(f1);
+        std::cout << "***************" << std::endl;
+        b1.executeForm(f1);
         std::cout << "***************" << std::endl;
         b1.executeForm(f2);
 

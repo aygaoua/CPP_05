@@ -34,16 +34,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 
     if (!chajara.is_open())
         throw std::runtime_error("Error: could not open file");
-    chajara << "      /\\      " << std::endl;
-    chajara << "     /\\#\\     " << std::endl;
-    chajara << "    /\\|\\#\\    " << std::endl;
-    chajara << "   /#/\\/\\/\\   " << std::endl;
-    chajara << "  /\\|\\/\\#\\/\\  " << std::endl;
-    chajara << " /\\#\\/\\#\\/\\/\\ " << std::endl;
-    chajara << "/\\|\\/\\/*/\\/|/\\" << std::endl;
-    chajara << "      ||      " << std::endl;
-    chajara << "      ||      " << std::endl;
-    chajara << "      ||      " << std::endl;
-    chajara << std::endl;
+    chajara << "....../\\....." << std::endl;
+    chajara << "...../**\\....." << std::endl;
+    chajara << "..../^^^^\\...." << std::endl;
+    chajara << "....\\^^^^/...." << std::endl;
+    chajara << "......||......" << std::endl;
 
 }
