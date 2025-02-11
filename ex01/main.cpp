@@ -7,7 +7,7 @@ int main()
         Bureaucrat b("AYGAOUA", 3);
         std::cout << b << std::endl;
 
-        Form f("cdd", 1, 6);
+        Form f("__form__", 1, 6);
         b.signForm(f);
         b.increment(2);
         b.signForm(f);
@@ -17,6 +17,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
+
     try
     {
         std::cout << "\n      ******************\n" << std::endl;
@@ -35,6 +36,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
+
     try
     {
         std::cout << "\n      ******************\n" << std::endl;
