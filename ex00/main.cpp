@@ -19,14 +19,15 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
+
     try
     {
-        std::cout << "\n      ******************\n" << std::endl;
+        std::cout << "\n*********************\n" << std::endl;
         Bureaucrat b("AYGAOUA2", 15);
         Bureaucrat c;
         b.decrement(136);
-        std::cout << b << std::endl;
         std::cout << c << std::endl;
+        std::cout << b << std::endl;
     }
     catch(const std::exception &e)
     {
