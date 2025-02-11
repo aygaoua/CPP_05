@@ -68,7 +68,8 @@ void AForm::beSigned(const Bureaucrat &bureaucrat) {
 std::ostream&	        operator<<(std::ostream& os, const AForm& obj){
 
     os << "| " << obj.getName() << ", grade required to signed: `" << obj.get_required_to_sign() \
-        << "`, grade required to execute: `" << obj.get_required_to_execute() << "` " << (obj.get_is_signed() ? "and is a singed form " : "and is not a signed form ") << "|";
+        << "`, grade required to execute: `" << obj.get_required_to_execute() << "` " \
+        << (obj.get_is_signed() ? "and is a singed form " : "and is not a signed form ") << "|";
     return os;
 }
 
