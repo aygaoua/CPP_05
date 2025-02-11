@@ -31,8 +31,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 
     AForm::execute(executor);
     std::cout << "zzzgrrrvrrrbzz ..." << std::endl;
-    if (system("say -v Zosia \"zzzgrrrvrrrbzz\"") == 0 &&
-        system("say -v Zosia \"zzzgrrrvrrrbzz\"") == 0)
+    if (system("say -v Zosia \"zzzgrrrvrrrbzz\"") == 0)
         std::cout << "zzzgrrrvrrrbzz ..." << std::endl;
     std::srand(std::time(0));
     if (std::rand() % 2)
