@@ -36,7 +36,7 @@ AForm* Intern::makeForm(std::string form_name, std::string target) {
         (form_name == "robotomy request") * 2 + \
         (form_name == "presidential pardon") * 3) - 1;
 
-    AForm *(Intern::*form[]) (std::string) = {
+    AForm *(Intern::*form[3]) (std::string) = {
         &Intern::makeShrubberyCreationForm,
         &Intern::makeRobotomyRequestForm,
         &Intern::makePresidentialPardonForm
