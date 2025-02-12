@@ -7,11 +7,9 @@
 
 int main()
 {
-    Intern someRandomIntern;
-    Bureaucrat corrector("Corrector", 1);
-    Bureaucrat me("Me", 70);
 
     try {
+        Intern someRandomIntern;
         std::cout << "\n******* Testing invalid form *******\n" << std::endl;
         AForm* invalid = someRandomIntern.makeForm("invalid form", "test");
         if (invalid == NULL)
@@ -23,6 +21,8 @@ int main()
     }
 
     try{
+        Intern someRandomIntern;
+        Bureaucrat me("Me", 5);
         std::cout << "\n********* shrubbery creation *******\n" << std::endl;
         AForm* SCF = someRandomIntern.makeForm("shrubbery creation", "test1");
         std::cout << *SCF << std::endl;
@@ -36,6 +36,8 @@ int main()
     }
 
     try{
+        Bureaucrat corrector("Corrector", 1);
+        Intern someRandomIntern;
         std::cout << "\n******** presidential pardon *******\n" << std::endl;
         AForm* PPF = someRandomIntern.makeForm("presidential pardon", "test2");
         std::cout << *PPF << std::endl;
@@ -49,6 +51,8 @@ int main()
     }
 
     try {
+        Intern someRandomIntern;
+        Bureaucrat corrector("Corrector", 1);
         std::cout << "\n********* robotomy request *********\n" << std::endl;
         AForm* RRF = someRandomIntern.makeForm("robotomy request", "test3");
         std::cout << *RRF << std::endl;
